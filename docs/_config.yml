@@ -41,7 +41,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true # true 支持图片本地上传
 relative_link: false
 future: true
 highlight:
@@ -98,11 +98,21 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: next
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
+deploy : 
   type: git
   repository: https://github.com/studyzx/studyzx.github.io.git
   branch: master 
+
+# 把英文单引号解析为中文单引号的问题
+## 适用默认的 hexo-renderer-marked
+marked:
+  smartypants: false
+  
+  ## 适用 hexo-renderer-markdown-it 和 hexo-renderer-markdown-it-plus
+  # markdown:
+  # render:
+  #   typographer: false
